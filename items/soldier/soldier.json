@@ -1,0 +1,10 @@
+{
+    "dynProp": {
+        "defense": 1,
+        "category": "army",
+        "price": 4,
+        "attack": 1
+    },
+    "name": "Soldat",
+    "ref": "soldier"
+}
