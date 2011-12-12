@@ -1,5 +1,6 @@
 platinium = Inventory.findOne(player, "platinium")
 
-army = Inventory.findAll(player, ["dynProp.category": "army", "order":"dynProp.price"])
+items = Item.findAll(app, ["dynProp.category": "army", "order":"dynProp.price"])
+army = Inventory.findAllToMap(player, ["dynProp.category": "army"])
 
-return ["player": player, "platinium": platinium, "army": army]
+return ["player": player, "platinium": platinium, "army": army, "items": items]
