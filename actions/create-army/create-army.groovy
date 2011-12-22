@@ -22,7 +22,7 @@ if (gold.quantity < (army.dynProp['price'] * quantity)) {
     return ["status": "error", "message": "You don't have enough platinium."]
 }
 
-Inventory.merge(player, "platinium", -army.dynProp['price'] * quantity)
+Inventory.merge(player, "platinium", -army.dynProp['price'] * quantity as int)
 Inventory.merge(player, ref, quantity)
 
 player.dynProp['attack'] += army.dynProp['attack'] * quantity

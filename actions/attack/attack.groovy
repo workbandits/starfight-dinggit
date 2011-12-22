@@ -30,9 +30,9 @@ if (playerAttack > playerToFightAttack) {
     for (armyElement in armyPlayer) {
         quantity = ((armyElement.quantity / 10) as int)
         player.dynProp['pop'] -= quantity
-        player.dynProp['attack'] -= armyElement.itemTemplate.dynProp['attack'] * quantity
-        player.dynProp['defense'] -= armyElement.itemTemplate.dynProp['defense'] * quantity
-        Inventory.merge(player, armyElement.itemTemplate.ref, -quantity)
+        player.dynProp['attack'] -= armyElement.item.dynProp['attack'] * quantity
+        player.dynProp['defense'] -= armyElement.item.dynProp['defense'] * quantity
+        Inventory.merge(player, armyElement.item.ref, -quantity)
         
         messagePlayer['pop'] += quantity
     }
@@ -47,9 +47,9 @@ if (playerAttack > playerToFightAttack) {
     for (armyElement in armyPlayerToFight) {
         quantity = ((armyElement.quantity / 4) as int)
         playerToFight.dynProp['pop'] -= quantity
-        playerToFight.dynProp['attack'] -= armyElement.itemTemplate.dynProp['attack'] * quantity
-        playerToFight.dynProp['defense'] -= armyElement.itemTemplate.dynProp['defense'] * quantity
-        Inventory.merge(playerToFight, armyElement.itemTemplate.ref, -quantity)
+        playerToFight.dynProp['attack'] -= armyElement.item.dynProp['attack'] * quantity
+        playerToFight.dynProp['defense'] -= armyElement.item.dynProp['defense'] * quantity
+        Inventory.merge(playerToFight, armyElement.item.ref, -quantity)
 
         messagePlayerToFight['pop'] += quantity
     }
@@ -77,9 +77,9 @@ if (playerAttack > playerToFightAttack) {
     for (armyElement in armyPlayerToFight) {
         quantity = ((armyElement.quantity / 10) as int)
         playerToFight.dynProp['pop'] -= quantity
-        playerToFight.dynProp['attack'] -= armyElement.itemTemplate.dynProp['attack'] * quantity
-        playerToFight.dynProp['defense'] -= armyElement.itemTemplate.dynProp['defense'] * quantity
-        Inventory.merge(playerToFight, armyElement.itemTemplate.ref, -quantity)
+        playerToFight.dynProp['attack'] -= armyElement.item.dynProp['attack'] * quantity
+        playerToFight.dynProp['defense'] -= armyElement.item.dynProp['defense'] * quantity
+        Inventory.merge(playerToFight, armyElement.item.ref, -quantity)
         
         messagePlayerToFight['pop'] += quantity
     }
@@ -93,9 +93,9 @@ if (playerAttack > playerToFightAttack) {
     for (armyElement in armyPlayer) {
         quantity = ((armyElement.quantity / 4) as int)
         player.dynProp['pop'] -= quantity
-        player.dynProp['attack'] -= armyElement.itemTemplate.dynProp['attack'] * quantity
-        player.dynProp['defense'] -= armyElement.itemTemplate.dynProp['defense'] * quantity
-        Inventory.merge(player, armyElement.itemTemplate.ref, -quantity)
+        player.dynProp['attack'] -= armyElement.item.dynProp['attack'] * quantity
+        player.dynProp['defense'] -= armyElement.item.dynProp['defense'] * quantity
+        Inventory.merge(player, armyElement.item.ref, -quantity)
 
         messagePlayer['pop'] += quantity
     }

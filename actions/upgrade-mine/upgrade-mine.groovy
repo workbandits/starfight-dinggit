@@ -10,7 +10,7 @@ if (player.dynProp['xp'] < xpMin) {
     ]
 }
 
-cost = (mine.dynProp['lvl'] + 1) * 35
+cost = (mine.dynProp['lvl'] + 1) * 35 as int
 
 if (platinium.quantity < cost) {
     return [
