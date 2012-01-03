@@ -2,6 +2,10 @@ if (player.dynProp['messages'] == null) {
     player.dynProp['messages'] = []
 }
 
+if (player.dynProp["messages"].size() >= 15) {
+    player.dynProp["messages"] = []
+}
+
 playerToSpy = Player.get(app, parameters['id'])
 
 if (playerToSpy == null) {

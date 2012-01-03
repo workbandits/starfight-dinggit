@@ -12,8 +12,16 @@ if (player.dynProp['messages'] == null) {
     player.dynProp['messages'] = []
 }
 
+if (player.dynProp["messages"].size() >= 15) {
+    player.dynProp["messages"] = []
+}
+
 if (playerToFight.dynProp['messages'] == null) {
     playerToFight.dynProp['messages'] = []
+}
+
+if (playerToFight.dynProp["messages"].size() >= 15) {
+    playerToFight.dynProp["messages"] = []
 }
 
 player.dynProp['nbAttack']--
