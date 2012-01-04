@@ -30,4 +30,4 @@ player.dynProp['defense'] += army.dynProp['defense'] * quantity
 player.dynProp['pop'] += quantity
 Player.save(player)
 
-return ["status": "success", "message": "You have created " + quantity + " " + army.itemTemplate.name]
+return ["status": "success", "message": "You have created " + quantity + " " + army.name]
