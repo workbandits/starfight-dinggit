@@ -1,0 +1,10 @@
+{
+    "description": "You must create 10 units.",
+    "dynProp": {
+
+    },
+    "goal": 10,
+    "name": "Rambo",
+    "points": 10,
+    "ref": "unit-10"
+}

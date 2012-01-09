@@ -30,4 +30,6 @@ player.dynProp['defense'] += army.dynProp['defense'] * quantity
 player.dynProp['pop'] += quantity
 Player.save(player)
 
-return ["status": "success", "message": "You have created " + quantity + " " + army.name]
+achievements = Achievement.progress(player, ["unit-5", "unit-10"], quantity)
+
+return ["status": "success", "message": "You have created " + quantity + " " + army.name, "achievements":achievements]
