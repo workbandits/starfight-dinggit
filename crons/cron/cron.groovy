@@ -1,9 +1,9 @@
-player.dynProp['nbAttack'] = Math.min(9, player.dynProp['nbAttack'] + ticks)
+player.dynProp.nbAttack = Math.min(9, player.dynProp.nbAttack + ticks)
 
 if (hours > 0) {
-    mine = Inventory.findOne(player, "mine")
+    mine = Item.findOne(player, "mine")
     
-    Inventory.merge(player, "platinium", (mine.dynProp['lvl'] * 20))
+    player.dynProp.platinium += mine.dynProp['lvl'] * 20
 }
 
 player.ticksRemaining = 0

@@ -3,5 +3,6 @@
 
     },
     "name": "on-load-report-page",
-    "ref": "on-load-report-page"
+    "ref": "on-load-report-page",
+    "secured": false
 }

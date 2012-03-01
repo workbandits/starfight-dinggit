@@ -1,3 +1,3 @@
-platinium = Inventory.findOne(player, "platinium")
+platinium = Item.findOne(player, "platinium")
 
 return ["player": player, "platinium": platinium]

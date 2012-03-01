@@ -3,5 +3,6 @@
 
     },
     "name": "on-load-ladder-page",
-    "ref": "on-load-ladder-page"
+    "ref": "on-load-ladder-page",
+    "secured": false
 }

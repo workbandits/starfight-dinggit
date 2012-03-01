@@ -3,5 +3,6 @@
 
     },
     "name": "create-army",
-    "ref": "create-army"
+    "ref": "create-army",
+    "secured": true
 }

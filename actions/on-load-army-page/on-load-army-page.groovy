@@ -1,6 +1,15 @@
-platinium = Inventory.findOne(player, "platinium")
+itemTemplates = ItemTemplate.findAll(app, ["dynProp.category":"army", "order":"dynProp.price"])
+army = Item.findAllUnspecializedToMap(player, ["dynProp.category":"army"])
 
-items = Item.findAll(app, ["dynProp.category": "army", "order":"dynProp.price"])
-army = Inventory.findAllToMap(player, ["dynProp.category": "army"])
+itemTemplatesWithQuantity = []
+for (itemTemplate in itemTemplates) {
+    if (army[itemTemplate.ref] != null) {
+        itemTemplate.dynProp.quantity = army[itemTemplate.ref].quantity
+    } else {
+        itemTemplate.dynProp.quantity = 0
+    }
+    
+    itemTemplatesWithQuantity.push(itemTemplate)
+}
 
-return ["player": player, "platinium": platinium, "army": army, "items": items]
+return ["player": player, "army": itemTemplatesWithQuantity]

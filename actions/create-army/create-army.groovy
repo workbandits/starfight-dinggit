@@ -10,26 +10,24 @@ if (quantity <= 0) {
 
 ref = parameters['ref']
 
-army = Item.findOne(app, ref)
-
+army = ItemTemplate.findOne(app, ref)
 if (army == null) {
-    return ["status": "error", "message": "Unknown element."]
+    return ["status": "error", "message": "Unknown item."]
 }
 
-gold = Inventory.findOne(player, "platinium")
-
-if (gold.quantity < (army.dynProp['price'] * quantity)) {
+cost = army.dynProp.price * quantity
+if (player.dynProp.platinium < cost) {
     return ["status": "error", "message": "You don't have enough platinium."]
 }
 
-Inventory.merge(player, "platinium", -army.dynProp['price'] * quantity as int)
-Inventory.merge(player, ref, quantity)
+Item.merge(player, ref, quantity)
 
-player.dynProp['attack'] += army.dynProp['attack'] * quantity
-player.dynProp['defense'] += army.dynProp['defense'] * quantity
-player.dynProp['pop'] += quantity
+player.dynProp.platinium -= cost
+player.dynProp.attack += army.dynProp.attack * quantity
+player.dynProp.defense += army.dynProp.defense * quantity
+player.dynProp.pop += quantity
 Player.save(player)
 
-achievements = Achievement.progress(player, ["unit-5", "unit-10"], quantity)
+achievements = Achievement.progress(player, ["unit-2", "unit-5"], quantity)
 
 return ["status": "success", "message": "You have created " + quantity + " " + army.name, "achievements":achievements]

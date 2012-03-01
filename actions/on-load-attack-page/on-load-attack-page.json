@@ -3,5 +3,6 @@
 
     },
     "name": "on-load-attack-page",
-    "ref": "on-load-attack-page"
+    "ref": "on-load-attack-page",
+    "secured": false
 }

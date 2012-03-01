@@ -3,5 +3,6 @@
 
     },
     "name": "spy",
-    "ref": "spy"
+    "ref": "spy",
+    "secured": true
 }

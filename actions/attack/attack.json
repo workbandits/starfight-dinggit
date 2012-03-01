@@ -3,5 +3,6 @@
 
     },
     "name": "attack",
-    "ref": "attack"
+    "ref": "attack",
+    "secured": true
 }

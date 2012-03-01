@@ -3,5 +3,6 @@
 
     },
     "name": "upgrade-mine",
-    "ref": "upgrade-mine"
+    "ref": "upgrade-mine",
+    "secured": true
 }

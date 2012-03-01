@@ -1,27 +1,28 @@
-platinium = Inventory.findOne(player, "platinium")
-mine = Inventory.findOne(player, "mine")
+mine = Item.findOne(player, "mine")
 
-xpMin = Math.max(0, mine.dynProp['lvl'] - 5)
+xpMin = Math.max(0, mine.dynProp.lvl - 5)
 
-if (player.dynProp['xp'] < xpMin) {
+if (player.dynProp.xp < xpMin) {
     return [
         "status": "error",
         "message": "You don't have the minimum level."
     ]
 }
 
-cost = (mine.dynProp['lvl'] + 1) * 35 as int
+cost = (mine.dynProp.lvl + 1) * 35
 
-if (platinium.quantity < cost) {
+if (player.dynProp.platinium < cost) {
     return [
         "status": "error",
         "message": "You don't have enough platinium."
     ]
 }
 
-Inventory.merge(player, "platinium", -cost)
-mine.dynProp['lvl'] = mine.dynProp['lvl'] + 1
-Inventory.save(mine)
+player.dynProp.platinium -= cost
+Player.save(player)
+
+mine.dynProp.lvl++
+Item.save(mine)
 
 return [
         "status": "success",
